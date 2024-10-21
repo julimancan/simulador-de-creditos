@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Button } from "./_components/Button";
-import { ChevronLeft, ChevronRight } from "./_components/Icons";
+import { Button } from "./Button";
+import { ChevronLeft, ChevronRight } from "./Icons";
 
 const paymentFrequencies = [
   {

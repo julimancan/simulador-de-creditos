@@ -1,5 +1,5 @@
 import Card from "./_components/Card"
-import Form from "./Form";
+import Form from "./_components/Form";
 
 
 
