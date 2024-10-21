@@ -84,7 +84,6 @@ const Form = () => {
     }
     const rate = state.interestRate / 100 / 12
     const periods = state.paymentFrequency === 'Semanal' ? 52 : state.paymentFrequency === 'Quincenal' ? 26 : 12
-    console.log({ amount, rate, periods, interestRate: state.interestRate })
     if (amount && rate && periods) {
       const calculatedQuota = (amount * rate * Math.pow(1 + rate, periods)) / (Math.pow(1 + rate, periods) - 1)
       setState({ ...state, quota: calculatedQuota })
@@ -102,7 +101,7 @@ const Form = () => {
             value="microCredit"
             name="creditType"
             checked={state.creditType === "microCredit"}
-            onChange={e => setState({ ...state, creditType: "microCredit" })}
+            onChange={() => setState({ ...state, creditType: "microCredit" })}
             className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
           />
           <label htmlFor="inline-radio" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Micro crédito</label>
@@ -113,7 +112,7 @@ const Form = () => {
             value="vehicle"
             name="creditType"
             checked={state.creditType === "vehicle"}
-            onChange={e => setState({ ...state, creditType: "vehicle" })}
+            onChange={() => setState({ ...state, creditType: "vehicle" })}
             className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
           />
           <label htmlFor="inline-2-radio" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Vehículo</label>
@@ -152,7 +151,6 @@ const Form = () => {
             type="number"
             name="amount"
             onChange={e => {
-              console.log({ e: e.target.value, state: state.loanAmount })
               setState({ ...state, loanAmount: parseFloat(e.target.value)
 
                })}}
@@ -170,7 +168,7 @@ const Form = () => {
                 value="motorcycle"
                 name="vehicleType"
                 checked={state.vehicleType === "motorcycle"}
-                onChange={e => setState({
+                onChange={() => setState({
                   ...state,
                   vehicleType: "motorcycle",
                   selectedVehicle: vehicles.motorcycle[0],
@@ -191,7 +189,7 @@ const Form = () => {
                 value="eBike"
                 name="vehicleType"
                 checked={state.vehicleType === "eBike"}
-                onChange={e => setState({
+                onChange={() => setState({
                   ...state,
                   vehicleType: "eBike",
                   selectedVehicle: vehicles.eBike[0],
