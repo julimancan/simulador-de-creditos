@@ -238,17 +238,13 @@ const Form = () => {
       {state.interestRate > 0 && state.loanAmount > 0 && (
         <>
           <footer className="flex justify-between gap-4">
-
             <Button type="button" onClick={calculateQuota}>Calcular Cuota</Button>
-
-
-
             <Button type="submit">Formalizar Compra</Button>
           </footer>
 
           {state.quota && (
             <div className="p-4 bg-secondary text-center">
-              <p className="font-semibold"> {state.paymentFrequency} Pagos estimados:</p>
+              <p className="font-semibold capitalize"> {(state.loanAmount / state.quota).toFixed(0)} pagos {`${state.paymentFrequency}es`} estimados de:</p>
               <p className="text-2xl font-bold">${state.quota.toFixed(2)}</p>
             </div>
           )}
