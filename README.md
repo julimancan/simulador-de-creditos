@@ -27,9 +27,9 @@ Este proyecto fue creado para Roda como un prototipo de simulador de créditos. 
 ### Instalación
 
 1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/tuusuario/prototipo-simulador-credito.git
-   ```
+```bash
+git clone https://github.com/tuusuario/prototipo-simulador-credito.git
+```
 
 2. Navega al directorio del proyecto:
 
